@@ -28,6 +28,8 @@ void cold();
 
 int power(int n, int m);
 
+float squareRoot(float n);
+
 int main() {
 
     // Print Hello function
@@ -145,6 +147,11 @@ int main() {
     scanf("%d", &exponent);
 
     printf("Power of %d^%d = %d \n", base, exponent, power(base, exponent));
+        
+    // Write a function to find the square root of a number
+    // Newton-Raphson method:
+
+    printf("Square root of a number 81 = %.2f", squareRoot(81));
 
     return 0;
 }
@@ -271,4 +278,19 @@ int power(int n, int m) {
         power = power * n;
     }
     return power;
+}
+
+// Write a function to find the square root of a number
+// Newton-Raphson method:
+
+float squareRoot(float n) {
+    float x = n;
+    float root;
+
+    for (int i = 0; i < 10; i++) {
+        root = 0.5 * (x + n / x);
+        x = root;
+    }
+
+    return root;
 }
