@@ -19,7 +19,12 @@ float squareArea(float n);
 float circleArea(float radius);
 float ractangleArea(float a, float b);
 
+float fehrenhit(float celsius);
+
+float percentage(int math, int science, int sanskrit);
+
 int sumOfDigit(int n);
+
 float sqaureroot(int n);
 
 void printTemperature(int temperature);
@@ -56,12 +61,12 @@ int main() {
 
     printf("%d + %d = %d \n", a, b, sum(a,b));
 
-    // Q 27 : Write 2 functions - one to print "Hello" & second to print "good bye".
+    // Q 24 : Write 2 functions - one to print "Hello" & second to print "good bye".
 
     hello();
     goodbye();
 
-    // Q 28 : Write a function that print Namaste if user is Indian & Bonjour if the user is French.    
+    // Q 25 : Write a function that print Namaste if user is Indian & Bonjour if the user is French.    
 
     char ch;
 
@@ -91,11 +96,11 @@ int main() {
 
     calculateprice(price);
     
-    // Q 29 : Use library functions to calculate the sqaure of a number given by user
+    // Q 26 : Use library functions to calculate the sqaure of a number given by user
 
     printf("Square of 5 is %f \n", pow(5, 2));
 
-    // Q 31 :  Write functions to calculate area of a square, a circle & a ractangle
+    // Q 27 :  Write functions to calculate area of a square, a circle & a ractangle
 
     float side = 5;
     printf("Area of a Square : %f \n", squareArea(side));
@@ -107,6 +112,30 @@ int main() {
     float width = 2;
 
     printf("Area of a Ractangle : %f \n", ractangleArea(length, width));
+
+    // Q 28 : Write a function to convert celsius to fehrenhit
+
+    float celsius;
+
+    printf("Enter the temperature in Celsius : ");
+    scanf("%f", &celsius);
+
+    printf("%.1f degree Celsius = %.2f Fehrenhit \n", celsius, fehrenhit(celsius));
+
+    // Q 29 : Write a function to calculate Percentage of a student from Marks in Science, Math & Sanskrit
+
+    int math, science, sanskrit;
+
+    printf("Enter the Math Marks : ");
+    scanf("%d", &math);
+
+    printf("Enter the Science Marks : ");
+    scanf("%d", &science);
+
+    printf("Enter the Sanskrit Marks : ");
+    scanf("%d", &sanskrit);
+
+    printf("Percentage = %.2f \n", percentage(math, science, sanskrit));
     
     //  =============== Practice Questions =============
 
@@ -174,7 +203,7 @@ int sum(int n, int m) {
     return n + m;
 }
 
-// Q 27 : Write 2 functions - one to print "Hello" & second to print "good bye".
+// Q 24 : Write 2 functions - one to print "Hello" & second to print "good bye".
 
 void hello() {
     printf("Hello \n");
@@ -184,7 +213,7 @@ void goodbye() {
     printf("Good Bye \n");
 }
 
-// Q 28 : Write a function that print Namaste if user is Indian & Bonjour if the user is French.
+// Q 25 : Write a function that print Namaste if user is Indian & Bonjour if the user is French.
 
 void printNamaste() {
     printf("Namaste \n");
@@ -209,7 +238,7 @@ void calculateprice(float price) {
     printf("Final Price is : %f \n", price);
 }
 
-// Q 31 :  Write functions to calculate area of a square, a circle & a ractangle
+// Q 27 :  Write functions to calculate area of a square, a circle & a ractangle
 
 float squareArea(float n) {
     return n * n;
@@ -221,6 +250,18 @@ float circleArea(float radius) {
 
 float ractangleArea(float a, float b) {
     return a * b;
+}
+
+// Q 28 : Write a function to convert celsius to fehrenhit
+
+float fehrenhit(float celsius) {
+    return (9.0 / 5.0) * celsius + 32;
+}
+
+// Q 29 : Write a function to calculate Percentage of a student from Marks in Science, Math & Sanskrit
+
+float percentage(int math, int science, int sanskrit) {
+    return (math + science + sanskrit) * 100 / 300;
 }
 
 //  =============== Practice Questions =============
