@@ -35,6 +35,8 @@ int power(int n, int m);
 
 float squareRoot(float n);
 
+int fibonacci(int n);
+
 int main() {
 
     // Print Hello function
@@ -180,7 +182,19 @@ int main() {
     // Write a function to find the square root of a number
     // Newton-Raphson method:
 
-    printf("Square root of a number 81 = %.2f", squareRoot(81));
+    printf("Square root of a number 81 = %.2f \n", squareRoot(81));
+
+    //  Write a function to print n terms of the fibonacci sequence
+
+    int n2;
+
+    printf("Enter the Number (Fibonacci Sequence) : ");
+    scanf("%d", &n2);
+
+    for (int i = 1; i <= n2; i++) {
+        printf("%d ", fibonacci(i));
+    }
+    printf("\n");
 
     return 0;
 }
@@ -334,4 +348,28 @@ float squareRoot(float n) {
     }
 
     return root;
+}
+
+// Write a function to print n terms of the fibonacci sequence (Using Loop)
+
+int fibonacci(int n) {
+
+    if (n == 1) {
+        return 0;
+    } 
+
+    if (n == 2) {
+        return 1;
+    } 
+    
+    int f1 = 0;
+    int f2 = 1;
+    int next;
+    
+    for (int i = 3; i <= n; i++) {
+        next = f1 + f2;
+        f1 = f2;
+        f2 = next;
+    }
+    return next;
 }
