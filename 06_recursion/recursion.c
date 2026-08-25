@@ -10,6 +10,12 @@ int fibonacciTerms(int n);
 
 int fibonacci(int n);
 
+int sumDigits(int n, int sum);
+
+int sumOfDigits(int n);
+
+int power(int n, int m);
+
 int main() {
 
     // Q 32 : factorial using recursion
@@ -62,7 +68,34 @@ int main() {
     for (int i = 1; i <= n2; i++) {
         printf("%d ", fibonacci(i));
     }
+
+    printf("\n");
     
+    //  =============== Practice Questions =============
+
+    // Write a function to find sum of digits of a number
+
+    int num;
+
+    printf("Enter the Number (Sum of Digits) : ");
+    scanf("%d", &num);
+
+    printf("Sum of digits of Number %d = %d \n", num, sumDigits(num, 0));
+
+    printf("Sum of digits of Number %d = %d \n", num, sumOfDigits(num));
+
+    // Make your own pow function
+
+    int base, exponent;
+
+    printf("Enter the base Number : ");
+    scanf("%d", &base);
+
+    printf("Enter the Power : ");
+    scanf("%d", &exponent);
+
+    printf("Power of %d^%d = %d \n", base, exponent, power(base, exponent));
+
     return 0;
 }
 
@@ -153,4 +186,54 @@ int fibonacci(int n) {
         f2 = next;
     }
     return next;
+}
+
+//  =============== Practice Questions =============
+
+// Write a function to find sum of digits of a number
+
+// Method 1 : 
+
+int sumDigits(int n, int sum) {
+    
+    if (n == 0) {
+        return sum;
+    }
+    
+    return sumDigits(n / 10, sum + n % 10);
+}
+
+// Method 2 :
+
+int sumOfDigits(int n) {
+
+    if (n == 0) {
+        return 0;
+    }
+    
+    return sumOfDigits(n / 10) + n % 10;
+}
+
+/*
+
+sumOfDigits(n / 10) + n % 10;
+
+Ex : sum(123)
+    = sum(12) + 3
+    = sum(1) + 2 + 3
+    = sum(0) + 1 + 2 + 3
+    = 0 + 1 + 2 + 3
+ans = 6 
+
+*/
+
+// Make your own pow function
+
+int power(int n, int m) {
+
+    if (m == 0) {
+        return 1;
+    }
+    
+    return power(n, m - 1) * n; 
 }
